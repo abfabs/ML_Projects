@@ -1,6 +1,6 @@
 # Stanford Dogs Breed Classification
 ### Multi-Backbone CNN Feature Fusion with PCA and Support Vector Machine
-![Dogs](Stanford_Dogs/dogs.jpg)
+<img src="Stanford_Dogs/dogs.jpg" alt="Dogs" width="700">
 ---
 
 ## Abstract

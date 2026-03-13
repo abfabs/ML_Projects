@@ -1,6 +1,6 @@
 # Stanford Dogs Breed Classification
 ### Multi-Backbone CNN Feature Fusion with PCA and Support Vector Machine
-
+![Dogs](Stanford_Dogs/dogs.jpg)
 ---
 
 ## Abstract
@@ -113,8 +113,6 @@ The ten most challenging breeds were:
 The system correctly identifies the breed in 9 out of every 10 test images, with no end-to-end neural network training and no manual feature engineering.
 
 The classes where the system struggles are instructive. Eskimo dog, Siberian Husky, and Malamute are visually nearly identical arctic spitz dogs — even experienced dog owners regularly confuse them. Collie and Border Collie differ mainly in subtle facial proportions. Lhasa Apso and Shih-Tzu share essentially the same body type and coat. These errors are not failures of the pipeline; they reflect a genuine visual ambiguity that challenges even humans. The global average pooling used here compresses the entire image into a single vector, discarding spatial information about where differences appear (e.g., ear shape, facial markings). A model that explicitly attends to discriminative regions would be better suited to these hard pairs.
-
-The most important practical lesson from this project is about data pipeline correctness. When feature extraction is decoupled from classification — as it is here — it is easy to accidentally shuffle the extraction dataset while keeping labels in a fixed order, causing a silent but catastrophic mismatch. Recognizing and fixing this issue was the decisive step that moved accuracy from 2% (random chance) to 94.80%. It is a failure mode unique to multi-stage pipelines that does not arise in standard end-to-end training.
 
 The gap between training accuracy (98.52%) and test accuracy (94.80%) is modest and expected — it reflects the genuine difficulty of fine-grained breed discrimination rather than severe overfitting, especially given that the worst classes are the visually hardest ones.
 
